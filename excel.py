@@ -37,7 +37,6 @@ def writeToCellOfEXCEL(fileName, row, col, Value):
     cell = str(col)+str(row)
     worksheet[cell] = Value
     workbook.save(excel_file)
-    
     return True
 
 
