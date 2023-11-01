@@ -5,8 +5,8 @@ excel_file = "book1.xlsx"
 workbook = load_workbook(excel_file)
 worksheet = workbook.active
 
-maxNumberOfEntries = worksheet.max_row
-
+maxNumberOfRows = worksheet.max_row
+maxNumberOfColumns = worksheet.max_column
 
 
 def readCell(cellvalue):
