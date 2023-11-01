@@ -1,18 +1,31 @@
 from openpyxl import Workbook, load_workbook
 
-excel_file = "book1.xlsx"
+def EXCEL1():
+    excel_file = "book1.xlsx"
+    workbook = load_workbook(excel_file)
+    worksheet = workbook.active
 
-workbook = load_workbook(excel_file)
-worksheet = workbook.active
-
-maxNumberOfRows = worksheet.max_row
-maxNumberOfColumns = worksheet.max_column
+    maxNumberOfRows = worksheet.max_row
+    maxNumberOfColumns = worksheet.max_column
 
 
 def readCell(cellvalue):
     value = worksheet[cellvalue].value
 ##    print(value)
     return value
+def readMaxCol(fileName):
+    excel_file = fileName
+    workbook = load_workbook(excel_file)
+    worksheet = workbook.active
+    maxNumberOfColumns = worksheet.max_column
+
+def readMaxRow(fileName):
+    excel_file = fileName
+    workbook = load_workbook(excel_file)
+    worksheet = workbook.active
+    maxNumberOfColumns = worksheet.max_row
+    
+
 
 
 ##readCell("A1")
