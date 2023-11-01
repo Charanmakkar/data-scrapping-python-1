@@ -14,7 +14,6 @@ soup = BeautifulSoup(html_content, 'html.parser')
 table_data = []
 def fileTOexcel_Table1():
     # Extract table data and organize it into a list of lists
-    
     table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
     for row in table.find_all('tr'):
         row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
@@ -42,40 +41,25 @@ def fileTOexcel_Table1():
 
     return [instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode]   #instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode
 
-### Create a DataFrame from the table data
-##df = pd.DataFrame(table_data[1:], columns=table_data[0])  # Assuming the first row contains column headers
-##
-### Write the DataFrame to an Excel file
-##df.to_excel('output_data2.xlsx', index=False)
-##
-##########################################################################
-##
-##table = soup.find('table', id="ctl00_ContentPlaceHolder1_grdbranch")
-##
-### Extract table data and organize it into a list of lists
-##table_data = []
-##for row in table.find_all('tr'):
-##    row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
-##    table_data.append(row_data)
 
-# Create a DataFrame from the table data
-##df = pd.DataFrame(table_data[1:], columns=table_data[0])  # Assuming the first row contains column headers
-##
-### Write the DataFrame to an Excel file
-##df.to_excel('output_data.xlsx', index=False)
+def fileTOexcel_Table2():
+    table_data = []
+    table = soup.find('table', id="ctl00_ContentPlaceHolder1_grdbranch")
+    for row in table.find_all('tr'):
+        row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
+        table_data.append(row_data)
+    del table_data[0]
+##    print(table_data)
 
+##    
+##    S_No = table_data[3][0]
+##    BRANCH_CODE = table_data[3][1]
+##    BRANCH_NAME = table_data[3][2]
+##    TOTAL_SEATS = table_data[3][3]
+    
+    return table_data
+##    return [S_No, BRANCH_CODE, BRANCH_NAME, TOTAL_SEATS] 
+##    return [instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode]   #instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode
 
-
-"""
-table_data[1][1].find("mobile")
--1
-table_data[1][1][-10:]
-'8328908142'
-table_data[1][1][-10:]
-'8328908142'
-len("ALTERNATIVEMOBILENUMBER:")
-24
-table_data[1][1][-44:-34]
-'9412391802'
-"""
-result = fileTOexcel_Table1()
+# r1 = fileTOexcel_Table1()
+# r2 = fileTOexcel_Table2()

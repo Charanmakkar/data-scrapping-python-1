@@ -3,9 +3,9 @@ from openpyxl import Workbook, load_workbook
 fileToReadEnteriesFrom = "book1.xlsx"
 fileToWriteData = "DATA_1.xlsx"
 
-##excel_file = "book1.xlsx"
-##workbook = load_workbook(excel_file)
-##worksheet = workbook.active
+excel_file = "book1.xlsx"
+workbook = load_workbook(excel_file)
+worksheet = workbook.active
 
 def readCell(fileName, cellvalue):
     excel_file = fileName
@@ -39,13 +39,24 @@ def writeToCellOfEXCEL(fileName, row, col, Value):
     workbook.save(excel_file)
     return True
 
+def writeToNextRow(fileName, col, Value):
+    excel_file = fileName
+    workbook = load_workbook(excel_file)
+    worksheet = workbook.active
+    MAXROW = worksheet.max_row
+    cell = str(col)+str(MAXROW+1)
+    worksheet[cell] = Value
+    workbook.save(excel_file)
+    return True
 
-
-### Write data to the worksheet
-##for x in range(1, worksheet.max_row+1):
-##    hyper = worksheet.cell(row = x, column = 4). hyperlink.display
-##    cell = "F"+str(x)
-##    worksheet[cell] = hyper
-##
-### Save the workbook to the Excel file
-##workbook.save(excel_file)
+def insertListToROW(list1, list2, fileName=fileToWriteData):
+    excel_file = fileName
+    workbook = load_workbook(excel_file)
+    worksheet = workbook.active
+    MAXROW = worksheet.max_row
+    finalList = list1 + list2
+    for x in range(len(finalList)):
+        cell = chr(65+x)+str(MAXROW+1)
+        worksheet[cell] = finalList[x]
+    workbook.save(fileName)
+    return 1
