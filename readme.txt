@@ -7,7 +7,7 @@ Instagram : /Charanmakkar
 
 Date of Starting Project : 31/10/2023 IST
 Date of Ending Project with desired Outcome : 02/11/2023 01:19 AM 
-Total time takken : few hours of 3 days
+Total time takken : few hours of 3 days, each day
 
 ///////////////*************************////////////////////
 
@@ -29,4 +29,27 @@ What we used and Learned here:
 7) PROBLEM SOLVING
 8) LOGIC BUILDING
 
+///////////////*************************////////////////////
+
+Question: HOW TO USE THE PROJECT
+1) You have requirments.txt file shared in the repo
+2) Open terminal on your Machine(Machine == Laptop || PC || Any OS device)
+3) Go to directory of project (You can download it or Clone via Github link)
+4) If Downloaded, it will more easy, Move to that directory in command line 
+   via using "cd " command in CMD or TERMINAL
+   Example: cd C:/data-scrapping-python-1/ 
+   You will see this directory only if you will export the project to C-Drive
+
+5) Here comes the main step 
+   copy this below command and sit tight...
+
+     pip install -r requirements.txt
+
+6) You are done here
+7) open project in folder and just double click on "main.py"
+   or execute the "main.py" in the CMD or TERMINAL 
+   Example: "python main.py" - Command for CMD or TERMINAL
+
+///////////////*************************////////////////////
+///////////////*************************////////////////////
 ///////////////*************************////////////////////
