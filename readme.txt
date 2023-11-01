@@ -51,5 +51,14 @@ Question: HOW TO USE THE PROJECT
    Example: "python main.py" - Command for CMD or TERMINAL
 
 ///////////////*************************////////////////////
+
+RESULT : Stored in Excel file "DATA_1.py"
+
 ///////////////*************************////////////////////
+
+Contact for any data scrapping tools, Automation scripts, Data communication on hardwares.
+Contact details shared on TOP
+
+#PYTHON_IS_FUN
+
 ///////////////*************************////////////////////
