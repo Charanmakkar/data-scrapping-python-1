@@ -12,7 +12,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 ##table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
 
 table_data = []
-def fileTOexcel():
+def fileTOexcel_Table1():
     # Extract table data and organize it into a list of lists
     
     table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
@@ -40,7 +40,7 @@ def fileTOexcel():
     district = institute_details.split(":")[-2][:-7]
     pincode = institute_details.split(":")[-1]
 
-    return 1
+    return [instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode]   #instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode
 
 ### Create a DataFrame from the table data
 ##df = pd.DataFrame(table_data[1:], columns=table_data[0])  # Assuming the first row contains column headers
@@ -78,4 +78,4 @@ len("ALTERNATIVEMOBILENUMBER:")
 table_data[1][1][-44:-34]
 '9412391802'
 """
-result = fileTOexcel()
+result = fileTOexcel_Table1()

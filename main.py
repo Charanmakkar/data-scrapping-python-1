@@ -10,8 +10,6 @@ chromedriver = 'Users/dell/Documents/MyPrograme/chromedriver'
 ##driver = webdriver.Chrome(chromedriver)
 driver = webdriver.Chrome()
 
-
-
 ######################main loop#############################
 print("**STARTING MAIN LOOP")
 for x in range(2):  #maxNumberOfEntries
@@ -24,10 +22,10 @@ for x in range(2):  #maxNumberOfEntries
     driver.execute_script("javascript:__doPostBack('ctl00$ContentPlaceHolder1$GridView1','Select$0')")
     webpage = driver.page_source
 
-##f = open("file.html", "a")
-##f.write(webpage)
-##f.close()
-##
+    # f = open("file.html", "a")
+    # f.write(webpage)
+    # f.close()
+
 ##import urllib.request as urllib
 ##from bs4 import BeautifulSoup
 ##
