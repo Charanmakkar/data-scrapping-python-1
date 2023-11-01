@@ -2,18 +2,20 @@ from excel import *
 from bs4 import BeautifulSoup
 import pandas as pd
 
-file_path = 'file.html'
 
-with open(file_path, 'r', encoding='ISO-8859-1') as file:
-    html_content = file.read()
-
-soup = BeautifulSoup(html_content, 'html.parser')
 
 ##table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
 
-table_data = []
 def fileTOexcel_Table1():
+    file_path = 'file.html'
+
+    with open(file_path, 'r', encoding='ISO-8859-1') as file:
+        html_content = file.read()
+
+    soup = BeautifulSoup(html_content, 'html.parser')
     # Extract table data and organize it into a list of lists
+    table_data = []
+    
     table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
     for row in table.find_all('tr'):
         row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
@@ -43,7 +45,15 @@ def fileTOexcel_Table1():
 
 
 def fileTOexcel_Table2():
+    file_path = 'file.html'
+
+    with open(file_path, 'r', encoding='ISO-8859-1') as file:
+        html_content = file.read()
+
+    soup = BeautifulSoup(html_content, 'html.parser')
+    # Extract table data and organize it into a list of lists
     table_data = []
+
     table = soup.find('table', id="ctl00_ContentPlaceHolder1_grdbranch")
     for row in table.find_all('tr'):
         row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]

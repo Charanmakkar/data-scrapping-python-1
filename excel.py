@@ -56,7 +56,7 @@ def insertListToROW(list1, list2, fileName=fileToWriteData):
     MAXROW = worksheet.max_row
     finalList = list1 + list2
     for x in range(len(finalList)):
-        cell = chr(65+x)+str(MAXROW+1)
+        cell = chr(66+x)+str(MAXROW+1)
         worksheet[cell] = finalList[x]
     workbook.save(fileName)
     return 1

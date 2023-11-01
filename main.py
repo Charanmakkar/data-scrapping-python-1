@@ -14,7 +14,8 @@ driver = webdriver.Chrome()
 
 ######################main loop#############################
 print("**STARTING MAIN LOOP")
-for x in range(3):  #maxNumberOfEntries
+
+for x in range(readMaxRow(fileToReadEnteriesFrom)):  # readMaxRow(fileToReadEnteriesFrom)
     hyperLink = readCell(fileToReadEnteriesFrom, ("E"+str(x+1)))
     print(hyperLink)
 
@@ -28,7 +29,12 @@ for x in range(3):  #maxNumberOfEntries
     f.write(webpage)
     f.close()
 
+    print("file.html updated")
+##    sleep(10)
+
     r1 = fileTOexcel_Table1()
     r2 = fileTOexcel_Table2()
 
-    insertListToROW(r1, r2)
+    for x in r2:
+        insertListToROW(r1, x)
+        
