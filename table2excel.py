@@ -15,6 +15,8 @@ def fileTOexcel_Table1():
     soup = BeautifulSoup(html_content, 'html.parser')
     # Extract table data and organize it into a list of lists
     table_data = []
+
+    institute_type = soup.find('span', id="ctl00_ContentPlaceHolder1_lblinsttype").string[17:]
     
     table = soup.find('table', id="ctl00_ContentPlaceHolder1_grd1")
     for row in table.find_all('tr'):
@@ -41,7 +43,7 @@ def fileTOexcel_Table1():
     district = institute_details.split(":")[-2][:-7]
     pincode = institute_details.split(":")[-1]
 
-    return [instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode]   #instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode
+    return [instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode, institute_type]   #instituteCode, instituteName, phoneNumber, alternateNumber, emailId, webSite, address, district, pincode
 
 
 def fileTOexcel_Table2():
@@ -59,7 +61,8 @@ def fileTOexcel_Table2():
         row_data = [cell.get_text(strip=True) for cell in row.find_all(['td', 'th'])]
         table_data.append(row_data)
     del table_data[0]
-##    print(table_data)
+    
+    print(table_data)
 
 ##    
 ##    S_No = table_data[3][0]
